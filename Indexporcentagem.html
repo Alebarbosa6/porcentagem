@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Calculadora</title>
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript">
+	     function checar(num)
+            {            
+             var botoes = document.getElementsByName("botao");
+             var num=document.calc.visor.value;
+
+             for (var i = 0 in botoes) 
+                if (botoes[i].checked){
+                    resul= botoes[i].value*num
+                    document.calc.resultado.value= resul.toFixed(2);
+
+                }
+
+            }
+
+	</script>
+</head>
+
+<body>
+	<header class="cabecalho">
+        <h1 class="container__titulo">Calculadora de porcentagem</h1>
+    </header>
+	
+	<form name="calc" class="calculadora">
+        <h3>Digite um número:</h3>
+		<input type="text" name="visor" id="visor" size="10">
+		<br>
+        <h4>Escolha uma porcentagem:</h4>
+        <input name="botao" type="radio" value="0.05" onclick="checar(0.05)"/> 5%<br />
+        <input name="botao" type="radio" value="0.10" onclick="checar(0.1)"/> 10%<br />
+        <input name="botao" type="radio" value="0.15" onclick="checar(0.15)"/> 15%<br />
+        <input name="botao" type="radio" value="0.20" onclick="checar(0.20)"/> 20%<br />
+        <br>
+        <h4>Resultado:</h4>
+        <input type="text" name="resultado" id="resultado" size="10">
+		<input type="reset" value="C">
+		<br>
+	</form>
+</body>
+
+</html>
